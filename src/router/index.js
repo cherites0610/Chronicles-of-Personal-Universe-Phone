@@ -10,7 +10,7 @@ import group from '@/views/group.vue'
 
 const routes = [
   {
-    path: '/home',
+    path: '/  ',
     name: 'home',
     component: home
   },

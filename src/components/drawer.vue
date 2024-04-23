@@ -1,5 +1,5 @@
 <template>
-    <div class="drawer">
+    <div  class="drawer z-50">
         <input id="my-drawer" type="checkbox" class="drawer-toggle"/>
         <div class="drawer-content">
             <label for="my-drawer" class="btn btn-primary drawer-button">導航欄</label>
@@ -23,7 +23,7 @@ const handleRouter = () => {
 const router = [
     {
         name: '首頁',
-        path: '/home',
+        path: '/',
     }, {
         name: '登錄',
         path: '/login',

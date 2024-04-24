@@ -1,5 +1,5 @@
 <template>
-    <div  class="drawer z-50">
+    <div class="absolute top-4 left-4 drawer z-10">
         <input id="my-drawer" type="checkbox" class="drawer-toggle"/>
         <div class="drawer-content">
             <label for="my-drawer" class="btn btn-primary drawer-button">導航欄</label>

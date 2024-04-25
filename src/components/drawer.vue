@@ -1,8 +1,7 @@
 <template>
-    <div class="absolute top-4 left-4 drawer z-10">
-        <input id="my-drawer" type="checkbox" class="drawer-toggle"/>
+    <div class=" w-52 absolute top-4 left-4 drawer z-10">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content">
-            
             <label for="my-drawer" class="drawer-button"><ph-list :size="32" /></label>
         </div>
         <div class="drawer-side">
@@ -18,7 +17,7 @@
 
 <script setup>
 const handleRouter = () => {
-    document.getElementsByClassName('drawer-toggle')[0].checked=false
+    document.getElementsByClassName('drawer-toggle')[0].checked = false
 }
 
 const router = [

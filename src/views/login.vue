@@ -1,7 +1,5 @@
 <template>
-    <div>
-        登錄
-    </div>
+
 </template>
 
 <script setup lang="ts">

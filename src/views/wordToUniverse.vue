@@ -1,6 +1,6 @@
 <template>
-    <div class="content-center flex flex-col flex-wrap mt-14">
-        <div @click="handleClickWTU(item)" v-for="item in list" class="border-neutral-500 mb-5 card w-80 bg-base-100 border">
+    <div class="content-center flex flex-col flex-wrap mt-14 p-4">
+        <div @click="handleClickWTU(item)" v-for="item in list" class="border-neutral-500 mb-5 card bg-base-100 border">
             <div class="p-4 card-body">
                 <h2 class="card-title">{{ item.year }}</h2>
                 <p class=" h-12 text-ellipsis overflow-hidden ...">{{ item.comment }}</p>

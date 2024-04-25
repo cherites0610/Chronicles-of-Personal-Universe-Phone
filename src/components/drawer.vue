@@ -2,7 +2,8 @@
     <div class="absolute top-4 left-4 drawer z-10">
         <input id="my-drawer" type="checkbox" class="drawer-toggle"/>
         <div class="drawer-content">
-            <label for="my-drawer" class="btn btn-primary drawer-button">導航欄</label>
+            
+            <label for="my-drawer" class="drawer-button"><ph-list :size="32" /></label>
         </div>
         <div class="drawer-side">
             <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
@@ -23,7 +24,7 @@ const handleRouter = () => {
 const router = [
     {
         name: '首頁',
-        path: '/',
+        path: '/home',
     }, {
         name: '登錄',
         path: '/login',

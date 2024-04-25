@@ -10,11 +10,6 @@ import group from '@/views/group.vue'
 
 const routes = [
   {
-    path: '/  ',
-    name: 'home',
-    component: home
-  },
-  {
     path: '/login',
     name: 'login',
     component: login
@@ -48,6 +43,11 @@ const routes = [
     path: '/group',
     name: 'group',
     component: group
+  }, 
+  {
+    path: '/home',
+    name: 'home',
+    component: home
   }
 ]
 

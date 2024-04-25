@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-14 flex flex-col gap-3 w-full p-4">
+    <div class="mt-10 flex flex-col gap-3 w-full p-4">
         <div v-for="index in Math.ceil(groups.length / 2)" class="flex gap-3 flex-row">
             <div @click="handldClickCard(groups[(index - 1) * 2])" class="card basis-1/2 bg-cyan-200 shadow-xl">
                 <cardBody :group="groups[(index - 1) * 2]" />

@@ -25,6 +25,10 @@
 </template>
 
 <script setup>
+import { Result, comment } from 'postcss';
+import { getWWordToUById } from '../api/getWordToUByIdApi';
+import '../mock/index'
+const comments = ref([]);
 const handleClickWTU = (item) => {
     document.getElementById('WTUmodal').showModal();
     selectList.value = item
@@ -35,20 +39,11 @@ const selectList = ref({
     comment: '未讀取',
 })
 
-const list = [
-    {
-        year: 2023,
-        comment: '我也不知道大哥要說怎麼，但反正我就隨便亂打，你們就隨便亂看'
-    },
-    {
-        year: 2024,
-        comment: '感覺如果和2023的一模一樣很沒誠意，所以我決定我在亂打一次，希望你們可以在亂砍一次,感覺如果和2023的一模一樣很沒誠意，所以我決定我在亂打一次，希望你們可以在亂砍一次,感覺如果和2023的一模一樣很沒誠意，所以我決定我在亂打一次，希望你們可以在亂砍一次'
-    },
-    {
-        year: 2025,
-        comment: '但反正就是亂打，只要有內容可以測試我就很滿意了'
-    }
-]
+const spinning = ref(true);
+getWWordToUById('1').then((result)=>{ //將1作為參數傳遞，返回一個promise，執行then( )
+    comments.value = result.data //result.data 變成comments.value
+    spinning.value = false; //處理完畢所以關掉
+})
 </script>
 
 <style scoped></style>

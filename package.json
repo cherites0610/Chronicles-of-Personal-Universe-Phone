@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@phosphor-icons/vue": "^2.2.1",
+    "axios": "^1.6.8",
     "dayjs": "^1.11.10",
+    "mockjs": "^1.1.0",
     "pinia": "^2.1.7",
     "sass": "^1.75.0",
     "theme-change": "^2.5.0",

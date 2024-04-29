@@ -1,6 +1,6 @@
 <template>
     <div class="content-center flex flex-col flex-wrap mt-14 p-4">
-        <div @click="handleClickWTU(item)" v-for="item in list" class="border-neutral-500 mb-5 card bg-base-100 border">
+        <div @click="handleClickWTU(item)" v-for="item in comments" class="border-neutral-500 mb-5 card bg-base-100 border">
             <div class="p-4 card-body">
                 <h2 class="card-title">{{ item.year }}</h2>
                 <p class=" h-12 text-ellipsis overflow-hidden ...">{{ item.comment }}</p>
@@ -26,9 +26,10 @@
 
 <script setup>
 import { Result, comment } from 'postcss';
-import { getWWordToUById } from '../api/getWordToUByIdApi';
+import { getWordToUById } from '../api/getWordToUByIdApi';
 import '../mock/index'
 const comments = ref([]);
+
 const handleClickWTU = (item) => {
     document.getElementById('WTUmodal').showModal();
     selectList.value = item
@@ -39,11 +40,20 @@ const selectList = ref({
     comment: '未讀取',
 })
 
-const spinning = ref(true);
-getWWordToUById('1').then((result)=>{ //將1作為參數傳遞，返回一個promise，執行then( )
-    comments.value = result.data //result.data 變成comments.value
-    spinning.value = false; //處理完畢所以關掉
+//為怎麼要用onMounted自己品
+//品出來跟我說為啥（tip:生命週期
+onMounted(async () => {
+    let result = await getWordToUById('1') //因為是返回一個promise，所以可以直接await接收then
+    comments.value = result.data
 })
+
+
+
+// getWordToUById('1').then((result)=>{ //將1作為參數傳遞，返回一個promise，執行then( )
+//     comments.value = result.data //result.data 變成comments.value
+//     console.log(result.data)
+//     spinning.value = false; //處理完畢所以關掉
+// }).catch((err) => {console.log(err)})
 </script>
 
 <style scoped></style>

@@ -9,7 +9,7 @@ Mock.mock('/api/login', 'post',  //用戶的假資料
     }
 )
 
-Mock.mock('/api/getWWordToUById','post',
+Mock.mock('/api/getWordToUById','post',
     [
         {
             year: 2023,

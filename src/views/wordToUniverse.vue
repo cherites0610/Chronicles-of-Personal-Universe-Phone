@@ -9,15 +9,24 @@
     </div>
 
     <dialog id="WTUmodal" class="modal">
-        <div class="modal-box w-64">
-            <h3 class="font-bold text-lg">{{ selectList.year }}</h3>
+        <div class="modal-box w-64 grid gap-y-3">
+            <div class="flex">
+                <h3 class="font-bold text-xl flex-auto">{{ selectList.year }}</h3>
+                <form method="dialog">
+                     <button class="btn btn-square btn-sm  btn-circle btn-ghost">
+                        <ph-x :size="24" />
+                    </button>
+                </form>
+               
+            </div>
+            
             <p>{{ selectList.comment }}</p>
             <div class="modal-action">
-                <form method="dialog">
-                    <button class="mr-2 btn btn-error">修改</button>
+                
+                    <button class="mr-2 btn btn-primary flex ">修改</button>
                     <!-- if there is a button in form, it will close the modal -->
-                    <button class="btn">關閉</button>
-                </form>
+                    
+               
             </div>
         </div>
     </dialog>

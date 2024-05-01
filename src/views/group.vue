@@ -1,11 +1,11 @@
 <template>
     <div class="mt-10 flex flex-col gap-3 w-full p-4">
         <div v-for="index in Math.ceil(groups.length / 2)" class="flex gap-3 flex-row">
-            <div @click="handldClickCard(groups[(index - 1) * 2])" class="card basis-1/2 bg-cyan-200 shadow-xl">
+            <div @click="handldClickCard(groups[(index - 1) * 2])" class="card basis-1/2  shadow-xl">
                 <cardBody :group="groups[(index - 1) * 2]" />
             </div>
             <div @click="handldClickCard(groups[index * 2 - 1])" v-if="cardIsShow(index)"
-                class="card basis-1/2 bg-stone-200 shadow-xl">
+                class="card basis-1/2  shadow-xl">
                 <cardBody :group="groups[index * 2 - 1]" />
             </div>
         </div>
@@ -13,15 +13,33 @@
 
     <dialog id="my_modal_1" class="modal">
         <div class="modal-box w-64">
-            <h3 class="font-bold text-lg">{{ selectGroup.name}}!</h3>
-            <p class="py-4">成員:</p>
-            <p v-for="item in selectGroup.members">{{ item }}</p>
-            <div class="modal-action">
+            <div class="flex justify-between">
+                <h3 class="font-bold text-xl flex-auto ">{{ selectGroup.name}}!</h3>
                 <form method="dialog">
-                    <button class="mr-2 btn btn-error">退出</button>
+                     <button class="btn btn-square btn-xs  btn-circle btn-ghost">
+                        <ph-x :size="24" />
+                    </button>
+                </form>               
+            </div>
+            
+            <p class="py-3 ">成員:</p>
+            <div class="place-content-end">
+                <p v-for="item in selectGroup.members" class="pl-5 py-0.5 text-sm"> {{ item }}</p>
+                
+            </div>
+            
+            <div class="modal-action">
+               
+                    <div >
+                        <button class=" btn btn-secondary btn-sm">
+                            
+                            退出
+                        </button>
+                    </div>
+                    
                     <!-- if there is a button in form, it will close the modal -->
-                    <button class="btn">關閉</button>
-                </form>
+                    
+                
             </div>
         </div>
     </dialog>

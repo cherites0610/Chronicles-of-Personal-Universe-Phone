@@ -1,5 +1,10 @@
 <template>
   <div class="mt-10 flex flex-col gap-3 w-full p-4">
+    <img
+      src="/public/universeLogo.png"
+      alt="Description"
+      class="w-24 h-24 mx-auto"
+    />
     <h3 class="label-text text-center text-xl">Login</h3>
 
     <span class="label-text items-center p-4 flex h-5"
@@ -44,10 +49,9 @@ function handleLoginClick(message) {
   if (form.value.account === "sunny" && form.value.password === "06141111") {
     console.info(message);
   } else {
-    console.warn("登入失敗");
+    console.info("登入失敗");
   }
 }
 </script>
 
 <style scoped></style>
-//我只是想上傳
